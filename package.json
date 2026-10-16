@@ -1,0 +1,47 @@
+{
+  "name": "git-workbench",
+  "version": "0.1.0",
+  "description": "A small toolkit of practical Git command-line tools",
+  "keywords": [
+    "git",
+    "cli",
+    "contributions",
+    "statistics",
+    "developer-tools"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "bin": {
+    "git-breakdown": "dist/src/bin/git-breakdown.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm test",
+    "test": "tsx --test packages/breakdown/test/*.test.ts"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xjeway/git-workbench.git"
+  },
+  "homepage": "https://github.com/xjeway/git-workbench#readme",
+  "bugs": {
+    "url": "https://github.com/xjeway/git-workbench/issues"
+  }
+}
